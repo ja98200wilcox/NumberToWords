@@ -58,7 +58,7 @@ public class Validator {
 		if(!Validator.isNumber(value)) {
 			return false;
 		}
-		Long valueLong = Long.valueOf(value);
+		long valueLong = Long.valueOf(value);
 		if(!Validator.isGreaterThanOrEqualToMin(valueLong,NUMBER_MIN)) {
 			return false;
 		}

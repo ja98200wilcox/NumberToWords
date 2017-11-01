@@ -94,12 +94,12 @@ public class ConvertImpl implements Convert {
 	 * A helper method for numbers greater than or equal to 1000. Used to process
 	 * hundredth group. For example 555678, the 555 will be handled by this method.
 	 * 
-	 * @param a
-	 *            number to be changed into words. Between 1 and 999.
-	 * @param container
-	 *            which holds the number as words
-	 * @param the
-	 *            group string : Trillion, Billion, Million, Thousand
+	 * @param value
+	 *            a number to be changed into words. Between 1 and 999.
+	 * @param translation
+	 *            container which holds the number as words
+	 * @param numberGroup
+	 *            the group string : Trillion, Billion, Million, Thousand
 	 */
 	private void bigNumberHundredsAndTens(int hundreds, StringBuilder translation, String numberGroup) {
 		hundreds(hundreds, translation);
@@ -110,10 +110,10 @@ public class ConvertImpl implements Convert {
 	/**
 	 * Processes the 6 in the 657
 	 * 
-	 * @param a
-	 *            number to be changed into words. Between 1 and 999.
-	 * @param container
-	 *            which holds the number as words
+	 * @param value
+	 *            a number to be changed into words. Between 1 and 999.
+	 * @param translation
+	 *            container which holds the number as words
 	 */
 	private void hundreds(int value, StringBuilder translation) {
 		if (value / 100 != 0) {
@@ -124,12 +124,12 @@ public class ConvertImpl implements Convert {
 	/**
 	 * Processes the 57 in 657
 	 * 
-	 * @param a
-	 *            number between 0 to 99
-	 * @param container
-	 *            which holds the number as words
-	 * @param add
-	 *            an "and" clause to the translation string
+	 * @param value
+	 *            a number between 0 to 99
+	 * @param translation
+	 *            container which holds the number as words
+	 * @param showAnd
+	 *            add an "and" clause to the translation string
 	 */
 	private void tens(int value, StringBuilder translation, boolean showAnd) {
 		if (value == 0) {
@@ -149,8 +149,8 @@ public class ConvertImpl implements Convert {
 	/**
 	 * Capitalize the first letter of a sentence.
 	 * 
-	 * @param the
-	 *            string to be changed
+	 * @param s
+	 *            the string to be changed
 	 * @return a string with the first letter capitalized
 	 */
 	private String capitalizeFirst(String s) {
